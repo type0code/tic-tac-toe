@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="game-wrap">
+  <div id="message" class="game-message">Select game options!</div>
+
+  <div class="board-wrap">
+    <div id="game-board" class="game-board"></div>
+
+    <form id="settings-form" class="game-info" action="">
+      <h1>Welcome!</h1>
+
+      <div class="info-label">Choose symbol</div>
+      <div class="info-row">
+        <input type="radio" class="btn-check" name="symbol" value="X" id="symbol-x" checked>
+        <label class="btn btn-sm btn-secondary" for="symbol-x" tabindex="0">X</label>
+
+        <input type="radio" class="btn-check" name="symbol" value="0" id="symbol-0">
+        <label class="btn btn-sm btn-secondary" for="symbol-0" tabindex="1">0</label>
+      </div>
+
+      <div class="info-label">Who goes first</div>
+      <div class="info-row">
+        <input type="radio" class="btn-check" name="first" value="0" id="me-first" checked>
+        <label class="btn btn-sm btn-secondary" for="me-first" tabindex="2">Me first</label>
+
+        <input type="radio" class="btn-check" name="first" value="1" id="computer-first">
+        <label class="btn btn-sm btn-secondary" for="computer-first" tabindex="3">Computer first</label>
+      </div>
+
+      <div class="info-actions">
+        <button class="btn" type="submit" tabindex="4" autofocus>Start</button>
+      </div>
+    </form>
+
+    <form id="reset-form" class="game-info hidden" action="">
+      <p id="result-message" class="result-message"></p>
+
+      <div class="info-actions">
+        <button class="btn" type="submit" tabindex="0" autofocus>Play again</button>
+        <button id="leave-game" class="btn btn-secondary" type="button" tabindex="1">Leave game</button>
+      </div>
+    </form>
+
+    <div id="ad-container-wrap" class="game-info ads-container-wrap hidden">
+      <video id="contentElement"></video>
+      <div id="adContainer" class="ad-container"></div>
+    </div>
+  </div>
+</div>
+
+<script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+html {
+  font-size: 16px;
+}
+body {
+  background: #c4eeea;
+  color: #000;
+  font-family: Arial, serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+*, *:before, *:after {
+  border: 0;
+  box-sizing: border-box;
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.btn {
+  background-color: #336cfb;
+  border: .0625rem solid #336cfb;
+  border-radius: 0.25rem;
+  box-shadow: 0 1.125rem 1.5rem rgba(0,0,0,.12);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  padding: .875rem 1.5rem;
+  transition:
+    background .2s ease-in-out,
+    border .2s ease-in-out,
+    box-shadow .2s ease-in-out,
+    color .2s ease-in-out;
+  text-align: center;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #2759fa;
+  border-color: #2759fa;
+  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.12);
+}
+.btn:focus {
+  outline: .1875rem solid rgba(79, 117, 239, 0.5);
+}
+.btn-sm {
+  padding: .5rem 1rem;
+}
+.btn-secondary {
+  background: #626364;
+  border-color: #626364;
+}
+.btn-check {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
+.btn-check:checked + .btn {
+  background: #336cfb;
+  border-color: #336cfb;
+}
+
+.game-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+.game-wrap .game-message {
+  color: #575454;
+  line-height: 1;
+  min-height: 1rem;
+  margin-bottom: 1rem;
+}
+.game-wrap .board-wrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 45rem;
+  position: relative;
+  width: 80rem;
+}
+.game-wrap .board-wrap .game-info {
+  align-items: center;
+  background: rgba(255,255,255,.8);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  left: 0;
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  transition:
+    .2s opacity 0s ease-in-out,
+    0s visibility 0s ease-in-out;
+  width: 100%;
+}
+.game-wrap .board-wrap .game-info .result-message {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+.game-wrap .board-wrap .game-info .info-label {
+  font-weight: 700;
+  margin: 0 0 .5rem;
+}
+.game-wrap .board-wrap .game-info .info-row {
+  display: flex;
+  gap: .5rem;
+  margin: 0 0 2rem;
+}
+.game-wrap .board-wrap .game-info .info-row .btn {
+  min-width: 10rem;
+}
+.game-wrap .board-wrap .game-info .info-actions {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+.game-wrap .board-wrap .game-board {
+  background: #939191;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  height: 40rem;
+  width: 40rem;
+}
+.game-wrap .board-wrap .game-board .cell-item {
+  align-items: center;
+  background: #c4eeea;
+  display: flex;
+  font-size: 0;
+  justify-content: center;
+  height: 13rem;
+  position: relative;
+  transition:
+    color .2s ease-in-out,
+    background .2s ease-in-out;
+  width: 13rem;
+}
+.game-wrap .board-wrap .game-board .cell-item.active {
+  background: #b9dbf3;
+}
+.game-wrap .board-wrap .game-board .cell-item.cross {
+  color: #686464;
+}
+.game-wrap .board-wrap .game-board .cell-item.cross:before,
+.game-wrap .board-wrap .game-board .cell-item.cross:after,
+.game-wrap .board-wrap .game-board .cell-item.zero:after {
+  content: '';
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+.game-wrap .board-wrap .game-board .cell-item.cross:before,
+.game-wrap .board-wrap .game-board .cell-item.cross:after {
+  background: currentColor;
+  height: 10rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: .5rem;
+}
+.game-wrap .board-wrap .game-board .cell-item.cross:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.game-wrap .board-wrap .game-board .cell-item.zero {
+  color: #fff;
+}
+.game-wrap .board-wrap .game-board .cell-item.zero:after {
+  border: .5rem solid currentColor;
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+}
+.game-wrap .board-wrap .game-board .cell-item.active:not(:empty) {
+  background: #cad2d7;
+}
+.game-wrap .board-wrap .game-board .cell-item.win {
+  color: #70bb83;
+}
+.ads-container-wrap {
+
+}
+.game-wrap .board-wrap .ad-container {
+  background: #fff;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#contentElement {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
